@@ -2,6 +2,7 @@ package main
 
 import (
 	"log"
+	"os"
 
 	"github.com/gin-gonic/gin"
     "media-sequencer/database"
@@ -46,7 +47,10 @@ func main() {
 	log.Println("Server running on http://localhost:8080")
 
 	// Start the backend server.
-	if err := router.Run(":8080"); err != nil {
-		log.Fatal("Failed to start server:", err)
-	}
+	port := os.Getenv("PORT")
+if port == "" {
+    port = "8080"
+}
+
+router.Run(":" + port)
 }

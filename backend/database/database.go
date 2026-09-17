@@ -41,10 +41,7 @@ func Connect() {
 		dbName = "media_sequencer"
 	}
 
-	dsn := dbUser + ":" + dbPassword +
-		"@tcp(" + dbHost + ":" + dbPort + ")/" +
-		dbName + "?parseTime=true"
-
+	dsn := dbUser + ":" + dbPassword + "@tcp(" + dbHost + ":" + dbPort + ")/" + dbName + "?parseTime=true&tls=true"
 	var err error
 
 	DB, err = sql.Open("mysql", dsn)
