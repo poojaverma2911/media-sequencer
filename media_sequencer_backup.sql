@@ -142,3 +142,11 @@ SET @@SESSION.SQL_LOG_BIN = @MYSQLDUMP_TEMP_LOG_BIN;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2026-09-17 14:28:31
+
+USE defaultdb;
+SHOW TABLES;
+
+CREATE DATABASE IF NOT EXISTS media_sequencer;
+USE media_sequencer;
+SHOW TABLES;
+
